@@ -1,0 +1,22 @@
+<div [ngStyle]="{
+          'background':config.fondo,
+					'padding':config.padding,
+					'border' : '5px solid ' + config.color
+				}">
+  <h1>
+    {{ title }}
+  </h1>
+  <h2>{{descripcion}}</h2>
+
+  <nav>
+    <a [routerLink]="['/home']" [routerLinkActive]="['linkActive']" >Home</a>&nbsp;
+    <a [routerLink]="['/zapatillas']" [routerLinkActive]="['linkActive']" >Zapatillas</a>&nbsp;
+    <a [routerLink]="['/cursos']" [routerLinkActive]="['linkActive']" >Cursos</a>&nbsp;
+    <a [routerLink]="['/videojuego']" [routerLinkActive]="['linkActive']" >Videojuego</a>&nbsp;
+    <a [routerLink]="['/externo']" [routerLinkActive]="['linkActive']" >Externo</a>&nbsp;
+    <a [routerLink]="['/contacto']" [routerLinkActive]="['linkActive']" >Contacto</a>&nbsp;
+  </nav>
+  <hr>
+
+  <router-outlet></router-outlet>
+</div>

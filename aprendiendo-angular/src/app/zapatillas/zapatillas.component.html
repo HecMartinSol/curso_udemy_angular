@@ -1,0 +1,27 @@
+<h2>{{titulo}}</h2>
+
+<h3>Agregar marca:</h3>
+<input type="text" name="marca_nueva" [(ngModel)]="marca_nueva" (keyup.enter)='addMarca()'>
+<button (click)='addMarca()'>Añadir</button>
+<p>Añadiendo marca: <b>{{marca_nueva}}</b></p>
+
+
+<h3>Compra las mejores marcas</h3>
+<ul>
+	<li *ngFor="let marca of marcas; let i = index">
+		{{marca}} - 
+		<button (click)="borrarMarca(i)">Borrar</button>
+
+	</li>
+</ul>
+
+
+<h3>Las deportivas son las siguientes:</h3>
+<ul>
+	<li *ngFor="let deportiva of zapatillas">
+		<span [ngStyle]="{'text-decoration' : (deportiva.stock ? 'none' : 'line-through')}">
+			{{deportiva.nombre}} - <b>{{deportiva.precio}}</b>
+			<span *ngIf="deportiva.precio <= 80"> - OFERTA</span>
+		</span>
+	</li>
+</ul> 
